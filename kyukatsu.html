@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>休活部Wikipedia</title>
+    <link rel="stylesheet" href="kyukatsu.css">
+</head>
+<body>
+    <p class="moji">
+        休活部のWikiへようこそ!　ここはまだ工事中です!
+    </p>
+    <p class="logo">
+        <img src="logo.jpg" alt="" width=150px>
+    </p>
+    <p>↑休活部のロゴマーク</p><br>
+    
+    <div class="area">
+    <input type="radio" name="tab_name" id="tab1" checked>
+    <label class="tab_class" for="tab1">歴史</label>
+    <div class="content_class">
+      <p>
+          休活部の成り立ちや記念日
+      </p>
+      <details>
+          <summary>成り立ち</summary>
+          休活部かくて成立せり
+      </details>
+      <details>
+          <summary>記念日</summary>
+          バレンタインデーを破壊せよ!
+      </details>
+    </div>
+    <input type="radio" name="tab_name" id="tab2" >
+    <label class="tab_class" for="tab2">規則</label>
+    <div class="content_class">
+      <p>ピピーッ!　そこ、廊下を走るな!</p>
+    </div>
+    <input type="radio" name="tab_name" id="tab3" >
+    <label class="tab_class" for="tab3">部員</label>
+    <div class="content_class">
+      <p>イカれたメンバーを紹介するぜ!</p>
+      <details>
+          <summary>紹介</summary>
+          すっごーい!　君は絵がかけるフレンズなんだね!
+      </details>
+      <details>
+          <summary>関係</summary>
+          鎖状三角関係とかいうパワーワード
+      </details>
+    </div>
+    <input type="radio" name="tab_name" id="tab4" >
+    <label class="tab_class" for="tab4">文化</label>
+    <div class="content_class">
+      <p>宗教とイベント</p>
+      <details>
+          <summary>宗教</summary>
+          実は3つもあるんですぜ...
+      </details>
+      <details>
+          <summary>イベント</summary>
+          肉だ、肉を食おう!
+          ポテトだ! Lサイズを注文しまくるんだ!
+      </details>
+    </div>
+    <input type="radio" name="tab_name" id="tab5" >
+    <label class="tab_class" for="tab5">生活</label>
+    <div class="content_class">
+      <p>知っておくべきこと</p>
+      <p>...そんなにないかもしれないけどね</p>
+    </div>
+    <input type="radio" name="tab_name" id="tab6" >
+    <label class="tab_class" for="tab6">掲示板</label>
+    <div class="content_class">
+      <p>ほんわかレス推奨です!</p>
+      <img src="honwaka.jpeg" alt="" width=100px>
+      
+      <form action="server.html" method="post">
+          <div>
+              <label for="name">ニックネーム:</label>
+              <input type="text" id="name" name="name" required maxlength="16" size="10">
+          </div>
+          <div>
+              <label for="message">投稿:</label><br>
+              <textarea id="message" name="message" cols="50" rows="5"></textarea>
+              <input type="submit" value="送信">
+              </div>
+      </form>
+      
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>受信</title>
+ </head>
+ <body>
+  <h1>受信結果</h1>
+  <div>name=
+   <?php
+   if(isset($_POST['name'])){
+    $id = $_POST['name'];
+    echo $id;
+   }
+   ?>
+  </div>
+  <div>message=
+   <?php
+   if(isset($_POST['message'])){
+    $password = $_POST['message'];
+    echo $password;
+   }
+   ?>
+  </div>
+ </body>
+</html>

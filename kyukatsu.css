@@ -1,0 +1,63 @@
+<@charset "UTF-8";>
+
+p.logo {width: 150px;}
+
+p.moji {color: orange}
+
+.area {
+  width: 500px;
+  margin: auto;
+  flex-wrap: wrap;
+  display: flex;
+}
+ 
+.tab_class {
+  width: calc(100%/6);
+  height: 50px;
+  background-color: darkgrey;
+  line-height: 50px;
+  font-size: 15px;
+  text-align: center;
+  display: block;
+  float: left;
+  order: -1;
+}
+ 
+input[name="tab_name"] {
+  display: none;
+}
+ 
+input:checked + .tab_class {
+  background-color: cadetblue;
+  color: aliceblue;
+}
+ 
+.content_class {
+  display: none;
+  width: 100%;
+}
+ 
+input:checked + .tab_class + .content_class {
+  display: block;
+}
+
+details {
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: .5em .5em 0;
+}
+
+summary {
+    font-weight: bold;
+    margin: -.5em -.5em 0;
+    padding: .5em;
+}
+
+details[open] {
+    padding: .5em;
+}
+
+details[open] summary {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: .5em;
+}
