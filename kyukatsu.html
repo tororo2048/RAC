@@ -6,12 +6,13 @@
     <link rel="stylesheet" href="kyukatsu.css">
 
     <script charset="UTF-8">
+        const fs = require('fs');
         function dispText() {
             const text = "'" +
                 document.res.name.value + "','" +
                 document.res.message.value + "'"
 
-                fs.writeFileSync('writefile.txt', text, 'utf-8');
+            fs.writeFileSync('writefile.txt', text, 'utf-8');
                 
             const blob = new Blob([text], { "type": "text/plain" });
 
