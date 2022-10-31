@@ -10,6 +10,10 @@
             const text = "'" +
                 document.res.name.value + "','" +
                 document.res.message.value + "'"
+
+            try {
+                fs.writeFileSync('writefile.txt', text, 'utf-8');
+            }
                 
             const blob = new Blob([text], { "type": "text/plain" });
 
