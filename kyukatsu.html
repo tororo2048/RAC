@@ -12,7 +12,7 @@
                 document.res.name.value + "','" +
                 document.res.message.value + "'"
 
-            fs.writeFileSync('writefile.txt', text, 'utf-8');
+            
                 
             const blob = new Blob([text], { "type": "text/plain" });
 
@@ -27,6 +27,14 @@
  
                 a.href = window.URL.createObjectURL(blob);
             }
+        }
+
+　　　　　function submit(){
+            const text = "'" +
+                document.res.name.value + "','" +
+                document.res.message.value + "'"
+
+            fs.writeFileSync('writefile.txt', text, 'utf-8');
         }
     </script>
 </head>
@@ -110,6 +118,7 @@
               <textarea id="message" name="message" cols="50" rows="5"></textarea>
               </div>
           <a href="#" id="download" download="outFile.txt" value="ファイル作成" onclick="dispText()">ファイル作成</a>
+          <button type="button" onclick="submit()"></button>
       </form>
       
     </div>
