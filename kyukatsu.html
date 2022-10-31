@@ -4,6 +4,24 @@
     <meta charset="UTF-8">
     <title>休活部Wikipedia</title>
     <link rel="stylesheet" href="kyukatsu.css">
+
+    <script>
+        function dispText() {
+            var text = "'" +
+                document.res.name.value + "','" +
+                document.rrs.message.value + "','" +
+                
+            var blob = new Blob([text], { "type": "text/plain" });
+
+            //IEの場合
+            if (window.navigator.msSaveBlob) {
+                window.navigator.msSaveBlob(blob, "outFileFromWindows.txt");
+                //IE以外の場合
+            } else {
+                document.getElementById("createFile").href = window.URL.createObjectURL(blob);
+            }
+        }
+    </script>
 </head>
 <body>
     <p class="moji">
@@ -74,7 +92,7 @@
       <p>ほんわかレス推奨です!</p>
       <img src="honwaka.jpeg" alt="" width=100px>
       
-      <form action="server.html" method="post">
+      <form name="res" method="post">
           <div>
               <label for="name">ニックネーム:</label>
               <input type="text" id="name" name="name" required maxlength="16" size="10">
@@ -82,8 +100,9 @@
           <div>
               <label for="message">投稿:</label><br>
               <textarea id="message" name="message" cols="50" rows="5"></textarea>
-              <input type="submit" value="送信">
+              <input type="button" value="送信" onclick="dispText()">
               </div>
+          <a id="createFile" href="#" download="outFile.txt" value="ファイル作成" onclick="dispText()">ファイル作成</a
       </form>
       
     </div>
