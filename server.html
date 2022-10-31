@@ -12,13 +12,13 @@
                 document.res.name.value + "','" +
                 document.res.message.value + "'"
 
-            fs.writeFileSync('writefile.txt', text, 'utf-8');
+            fs.appendFileSync('writefile.txt', text, 'utf-8');
         }
     </script>
 </head>
 <body>
     <meta charset="UTF-8">
-      <p>ほんわかレス推奨です!4</p>
+      <p>ほんわかレス推奨です!5</p>
       <img src="honwaka.jpeg" alt="" width=100px>
       
       <form name="res" method="post">
