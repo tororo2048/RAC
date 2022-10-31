@@ -8,17 +8,18 @@
     <script charset="UTF-8">
 　　　　　function s() {
             const fs = require('fs');
-            const text = "'" +
-                document.res.name.value + "','" +
-                document.res.message.value + "'"
+            text = "a"
+                //"'" +
+                //document.res.name.value + "','" +
+                //document.res.message.value + "'"
 
-            fs.appendFileSync('writefile.txt', text, 'utf-8');
+            fs.writeFileSync('file.txt', text, 'utf-8');
         }
     </script>
 </head>
 <body>
     <meta charset="UTF-8">
-      <p>ほんわかレス推奨です!5</p>
+      <p>ほんわかレス推奨です!6</p>
       <img src="honwaka.jpeg" alt="" width=100px>
       
       <form name="res" method="post">
