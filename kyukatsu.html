@@ -7,11 +7,11 @@
 
     <script charset="UTF-8">
         function dispText() {
-            var text = "'" +
+            const text = "'" +
                 document.res.name.value + "','" +
                 document.res.message.value + "'"
                 
-            var blob = new Blob([text], { "type": "text/plain" });
+            const blob = new Blob([text], { "type": "text/plain" });
 
             //IEの場合
             if (window.navigator.msSaveBlob) {
