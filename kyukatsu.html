@@ -4,45 +4,17 @@
     <meta charset="UTF-8">
     <title>休活部Wikipedia</title>
     <link rel="stylesheet" href="kyukatsu.css">
-
+    
     <script charset="UTF-8">
-        <!--
-        function dispText() {
-            const text = "'" +
-                document.res.name.value + "','" +
-                document.res.message.value + "'"
-
-            
-                
-            const blob = new Blob([text], { "type": "text/plain" });
-
-            //IEの場合
-            if (window.navigator.msSaveBlob) {
-                window.navigator.msSaveBlob(blob, "outFileFromWindows.txt");
-                //IE以外の場合
-            } else {
-                //document.getElementById("createFile").href = window.URL.createObjectURL(blob);
-
-                const a = document.getElementById('download');
- 
-                a.href = window.URL.createObjectURL(blob);
+　　　　　function s() {
+            text = document.res.name.value + "\n"
+             + document.res.message.value + "\n"
+            var writing = document.getElementById('res')
+            writing.innerHTML = writing.innerHTML + text
             }
-        }
-        -->
-
-　　　　　function submit() {
-            alert("1");
-            const fs = require('fs');
-            const text = "'" +
-                document.res.name.value + "','" +
-                document.res.message.value + "'"
-
-            fs.writeFileSync('writefile.txt', text, 'utf-8');
-        }
     </script>
 </head>
 <body>
-    <meta charset="UTF-8">
     <p class="moji">
         休活部のWikiへようこそ!　ここはまだ工事中です!
     </p>
@@ -111,17 +83,13 @@
       <p>ほんわかレス推奨です!</p>
       <img src="honwaka.jpeg" alt="" width=100px>
       
-      <form name="res" method="post">
-          <div>
-              <label for="name">ニックネーム:</label>
-              <input type="text" id="name" name="name" required maxlength="16" size="10">
-          </div>
-          <div>
+      <form name ="res" method="post">
+          <label for="name">ニックネーム:</label>
+          <input type="text" id="name" name="name" required maxlength="16" size="10">
               <label for="message">投稿:</label><br>
-              <textarea id="message" name="message" cols="50" rows="5"></textarea>
-              </div>
-          <a href="#" id="download" download="outFile.txt" value="ファイル作成" onclick="dispText()">ファイル作成</a>
-          <button type="button" onclick="submit()" value="送信">送信</button>
+          <textarea id="message" name="message" cols="50" rows="5"></textarea>
+          <button type="button" onclick="s()">送信</button>
+          <p id="res"></p>
       </form>
     </div>
   </div>
