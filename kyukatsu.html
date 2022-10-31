@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="kyukatsu.css">
 
     <script charset="UTF-8">
+        alert('JavaScriptのアラート');
         const fs = require('fs');
         function dispText() {
             const text = "'" +
@@ -30,10 +31,12 @@
         }
 
 　　　　　function submit(){
+            alert('JavaScriptのアラート');
             const text = "'" +
                 document.res.name.value + "','" +
                 document.res.message.value + "'"
 
+            alert('JavaScriptのアラート');
             fs.writeFileSync('writefile.txt', text, 'utf-8');
         }
     </script>
