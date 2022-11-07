@@ -1,3 +1,18 @@
+<?php
+
+$fp = fopen('php.csv', 'a+b');
+
+if ($_SERVER['REQUEST_METHOD" === "POST") { 
+fputcsv($fp, [S_POST['name'], $_POST['message']]); rewind($fp);
+
+}
+
+while ($row = fgetcsv($fp)) { 
+$rows[] = $row;
+}
+fclose($fp);
+?>
+
 <!DOCTYPE html>
 <html lang="jp">
 <head>
@@ -108,11 +123,20 @@
       <form action="" name ="res" method="post">
           <label for="name">ニックネーム:</label>
           <input type="text" id="name" name="name" required maxlength="16" size="10">
-              <label for="message">投稿:</label><br>
+              <br><label for="message">投稿:</label><br>
           <textarea id="message" name="message" cols="50" rows="5"></textarea>
-          <button type="button">送信</button>
+          <button type="submit">送信</button>
           <p id="res">ごめんよ、ここはまだ工事中だ!</p>
-          <img src="yoshi.jpeg" alt="" width=200px>
+          <p>投稿</p>
+          <?php if (!empty($rows)); ?>
+         
+         <?php foreach ($rows as $row): ?>
+         <li><?php print $row[1]; ?>
+         (<?php print $row[0]; ?>)</li>
+         <?php endforeach; >
+         <?php else; ?>
+         <p>投稿はまだありません</p>
+         <?php endif; ?>
       </form>
     </div>
   </div>
