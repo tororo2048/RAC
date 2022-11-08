@@ -6,10 +6,27 @@
     <link rel="stylesheet" href="kyukatsu.css">
 </head>
 
+<script>
+    function realtime2() {
+var now = new Date();
+var y = now.getFullYear();
+var m = now.getMonth() + 1;
+var d = now.getDate();
+var w = now.getDay();
+var wd = ['日', '月', '火', '水', '木', '金', '土'];
+var h = now.getHours();
+var mi = now.getMinutes();
+target = document.getElementById('time');
+target.innerHTML = y + '年' + m + '月' + d + '日' + '(' + wd[w] + ')' + '　' + h + ':' + mi;
+}
+setInterval('realtime2()',1000);
+</script>
+
 <body>
     <p class="moji">
         休活部のWikiへようこそ! ゆっくりしていって!
     </p>
+    <p id="time"></p>
     <p class="logo">
         <img src="logo.jpg" alt="" width=150px>
     </p>
