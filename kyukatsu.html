@@ -1,37 +1,14 @@
-<?php
-
-$fp = fopen('php.csv', 'a+b');
-
-if ($_SERVER['REQUEST_METHOD" === "POST") { 
-fputcsv($fp, [S_POST['name'], $_POST['message']]); rewind($fp);
-
-}
-
-while ($row = fgetcsv($fp)) { 
-$rows[] = $row;
-}
-fclose($fp);
-?>
-
 <!DOCTYPE html>
 <html lang="jp">
 <head>
     <meta charset="UTF-8">
-    <title>休活部Wikipedia</title>
+    <title>休活部-Wikipedia</title>
     <link rel="stylesheet" href="kyukatsu.css">
-    
-    <script charset="UTF-8">
-　　　　　function s() {
-            text = document.res.name.value + "\n"
-             + document.res.message.value + "\n"
-            var writing = document.getElementById('res')
-            writing.innerHTML = writing.innerHTML + text
-            }
-    </script>
 </head>
+
 <body>
     <p class="moji">
-        休活部のWikiへようこそ!
+        休活部のWikiへようこそ! ゆっくりしていって!
     </p>
     <p class="logo">
         <img src="logo.jpg" alt="" width=150px>
@@ -57,7 +34,6 @@ fclose($fp);
     <input type="radio" name="tab_name" id="tab2" >
     <label class="tab_class" for="tab2">規則</label>
     <div class="content_class">
-      <p>ピピーッ!　そこ、廊下を走るな!</p>
       <p>人に優しくすること<br>楽しく生きること</p>
     </div>
     <input type="radio" name="tab_name" id="tab3" >
@@ -112,31 +88,22 @@ fclose($fp);
       
       <br><br>3.たまに会話が哲学になる<br>
       考え方が違い哲学が好きな人が多いため、難しい会話になることがあります。ごめんね。
-
     </div>
+    
     <input type="radio" name="tab_name" id="tab6" >
     <label class="tab_class" for="tab6">掲示板</label>
     <div class="content_class">
       <p>ほんわかレス推奨です!</p>
       <img src="honwaka.jpeg" alt="" width=100px>
       
-      <form action="" name ="res" method="post">
-          <label for="name">ニックネーム:</label>
-          <input type="text" id="name" name="name" required maxlength="16" size="10">
-              <br><label for="message">投稿:</label><br>
-          <textarea id="message" name="message" cols="50" rows="5"></textarea>
-          <button type="submit">送信</button>
-          <p id="res">ごめんよ、ここはまだ工事中だ!</p>
-          <p>投稿</p>
-          <?php if (!empty($rows)); ?>
-         
-         <?php foreach ($rows as $row): ?>
-         <li><?php print $row[1]; ?>
-         (<?php print $row[0]; ?>)</li>
-         <?php endforeach; >
-         <?php else; ?>
-         <p>投稿はまだありません</p>
-         <?php endif; ?>
+      <form action="" name="res" method="post">
+          <label>ニックネーム:</label>
+          <input type="text" required maxlength="16" size="10">
+          <label>投稿:</label><br>
+          <textarea id="message" cols="50" rows="5"></textarea>
+          <button type="button">送信</button>
+          <br><p>ヒャッハー! 怪我したくなきゃうちに帰りな!</p>
+          <p>ここは解体作業中だぜベイベー!</p>
       </form>
     </div>
   </div>
