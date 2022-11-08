@@ -18,8 +18,16 @@ var h = now.getHours();
 var mi = now.getMinutes();
 target = document.getElementById('time');
 target.innerHTML = y + '年' + m + '月' + d + '日' + '(' + wd[w] + ')' + '　' + h + ':' + mi;
+
+var day1 = new Date("2022/10/13");
+var day2 = new Date();
+ 
+var termDay = (day2 - day1) / 86400000;
+target2 = document.getElementById('ann');
+target2.innerHTML = "本日は 大成" + Math.ceil(termDay) + '日 です';
 }
 setInterval('realtime2()',1000);
+
 </script>
 
 <body>
@@ -27,6 +35,7 @@ setInterval('realtime2()',1000);
         休活部のWikiへようこそ! ゆっくりしていって!
     </p>
     <p id="time"></p>
+    <p id="ann"></p>
     <p class="logo">
         <img src="logo.jpg" alt="" width=150px>
     </p>
@@ -116,7 +125,7 @@ setInterval('realtime2()',1000);
       <form action="" name="res" method="post">
           <label>ニックネーム:</label>
           <input type="text" required maxlength="16" size="10">
-          <label>投稿:</label><br>
+          <br><label>投稿:</label><br>
           <textarea id="message" cols="50" rows="5"></textarea>
           <button type="button">送信</button>
           <br><p>ヒャッハー! 怪我したくなきゃうちに帰りな!</p>
